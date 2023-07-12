@@ -1,0 +1,20 @@
+
+{
+    "accept_invalid_certificates": false,
+    "target": {
+        "path": {
+            "deployment": "dotenv"
+        }
+    },
+    "feature": {
+        "network": {
+            "incoming": "mirror",
+            "outgoing": true
+        },
+        "fs": {
+            "mode": "localwithoverrides",
+            "read_only": ".*/.env"
+        },
+        "env": true
+    }
+}

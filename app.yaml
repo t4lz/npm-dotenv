@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotenv
+  labels:
+    app: dotenv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotenv
+  template:
+    metadata:
+      labels:
+        app: dotenv
+    spec:
+      containers:
+        - name: dotenv
+          image: npm-dotenv-test
+          imagePullPolicy: Never
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: dotenv
+  name: dotenv
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+      nodePort: 30832
+  selector:
+    app: dotenv
+  sessionAffinity: None
+  type: NodePort
