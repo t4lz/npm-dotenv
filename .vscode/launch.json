@@ -5,6 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "command": "npm run dotenv-cli",
+            "name": "npm dotenv-cli",
+            "request": "launch",
+            "type": "node-terminal",
+            "env": {
+                "MIRRORD_AGENT_RUST_LOG": "mirrord=trace",
+                "RUST_LOG": "warn,mirrord=trace",
+                "MIRRORD_CONSOLE_ADDR": "127.0.0.1:11233"
+            }
+        },
+        {
             "name": "Launch via NPM",
             "request": "launch",
             "runtimeArgs": [
