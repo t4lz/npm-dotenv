@@ -1,6 +1,6 @@
 require('dotenv').config({ path: '/app/.env' })
 
-console.log(process.env)
+// console.log(process.env)
 
 console.log(process.env.TEST_DOTENV)
 

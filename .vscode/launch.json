@@ -5,14 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "command": "npm run dotenv-cli",
+            "command": "source ~/.nvm/nvm.sh; nvm use; npm run dotenv-cli",
             "name": "npm dotenv-cli",
             "request": "launch",
             "type": "node-terminal",
             "env": {
                 "MIRRORD_AGENT_RUST_LOG": "mirrord=trace",
-                "RUST_LOG": "warn,mirrord=trace",
-                "MIRRORD_CONSOLE_ADDR": "127.0.0.1:11233"
+                "RUST_LOG": "warn,mirrord=error"
             }
         },
         {
